@@ -13,7 +13,8 @@ from PyQt6.QtWidgets import (
     QSpinBox,
     QVBoxLayout,
     QWidget,
-    QHBoxLayout,
+    QGridLayout,
+    QGroupBox
 )
 
 
@@ -29,7 +30,8 @@ class MainWindow(QMainWindow):
 # Setup for the title
     def UIComponents(self):
         self.container = QWidget()
-        self.main_layout = QVBoxLayout()
+        self.main_layout = QGridLayout()
+
         self.container.setLayout(self.main_layout)
         self.setCentralWidget(self.container)
 
@@ -38,17 +40,20 @@ class MainWindow(QMainWindow):
         h1_font.setPointSize(30)
         self.title_label.setFont(h1_font)
         self.title_label.setAlignment(Qt.AlignmentFlag.AlignTop)
+        self.main_layout.addWidget(self.title_label, 0, 0)
 
-        self.main_layout.addWidget(self.title_label)
-
-        self.left_panel = QWidget()
-        self.left_panel_layout = QVBoxLayout()
-        self.left_panel.setLayout(self.left_panel_layout)
-        self.main_layout.addWidget(self.left_panel)
+        # self.left_panel = QWidget()
+        # self.left_panel_layout = QVBoxLayout()
+        # self.left_panel.setLayout(self.left_panel_layout)
+        # self.main_layout.addWidget(self.left_panel)
 
         left_pane = QVBoxLayout()
         
         right_pane = QVBoxLayout()
+
+
+        self.grade_inputs = QWidget
+        # self.gr
 
 # Area where user enters class grades
         class_label = QLabel("Enter your class grade here:")
@@ -56,6 +61,25 @@ class MainWindow(QMainWindow):
         h2_font.setPointSize(20)
         class_label.setFont(h2_font)
 
+        class_1_container = QGroupBox("Period 1 ")
+        class_1_container_layout = QGridLayout()
+        class_1_container.setLayout(class_1_container_layout)
+        enter_class1_title = QLineEdit()
+        enter_class1_title.setFixedSize(250, 50)
+        enter_grade_class_1 = QDoubleSpinBox()
+
+        class_1_container_layout.addWidget(enter_class1_title, 0, 0)
+        class_1_container_layout.addWidget(enter_grade_class_1, 0 , 1)
+
+        #Period 2
+        class_2_container = QGroupBox("Period 2 ")
+        class_2_container_layout = QGridLayout()
+        class_2_container.setLayout(class_2_container_layout)
+        enter_class2_title = QLineEdit()
+        enter_grade_class_2 = QDoubleSpinBox()
+
+        class_2_container_layout.addWidget(enter_class2_title, 0, 0)
+        class_2_container_layout.addWidget(enter_grade_class_2, 0 , 1)
 # Results area
         results_label = QLabel("Your unweighted GPA is...")
         h2_font = results_label.font()
@@ -80,16 +104,16 @@ class MainWindow(QMainWindow):
         push_button = QPushButton
         
 # Calls the function
-        
-        left_pane.addWidget(self.title_label)
+        self.main_layout.addWidget(class_1_container, 1, 0)
+        self.main_layout.addWidget(class_2_container, 2, 0)
 
-        right_pane.addWidget(results_label)
-        left_pane.addWidget(class_label)
-        right_pane.addWidget(calculate_label)
+        # right_pane.addWidget(results_label)
+        # left_pane.addWidget(class_label)
+        # right_pane.addWidget(calculate_label)
         
 
-        self.main_layout.addLayout(left_pane)
-        self.main_layout.addLayout(right_pane)
+        # self.main_layout.addLayout(left_pane, 1, 0)
+        # self.main_layout.addLayout(right_pane, 1, 2)
 
 
 
