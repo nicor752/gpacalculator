@@ -61,11 +61,11 @@ class MainWindow(QMainWindow):
         h2_font.setPointSize(20)
         class_label.setFont(h2_font)
 
+        #Period 1
         class_1_container = QGroupBox("Period 1 ")
         class_1_container_layout = QGridLayout()
         class_1_container.setLayout(class_1_container_layout)
         enter_class1_title = QLineEdit()
-        enter_class1_title.setFixedSize(250, 50)
         enter_grade_class_1 = QDoubleSpinBox()
 
         class_1_container_layout.addWidget(enter_class1_title, 0, 0)
@@ -80,6 +80,24 @@ class MainWindow(QMainWindow):
 
         class_2_container_layout.addWidget(enter_class2_title, 0, 0)
         class_2_container_layout.addWidget(enter_grade_class_2, 0 , 1)
+
+        #Period3
+        class_3_container = QGroupBox("Period 3 ")
+        class_3_container_layout = QGridLayout()
+        class_3_container.setLayout(class_3_container_layout)
+        enter_class3_title = QLineEdit()
+        enter_grade_class_3 = QDoubleSpinBox()
+
+        class_3_container_layout.addWidget(enter_class3_title, 0, 0)
+        class_3_container_layout.addWidget(enter_grade_class_3, 0 , 1)
+
+        #Title
+        calc_desc_container = QGroupBox("How does the GPA calculator work?")
+        calc_desc_container_layout = QGridLayout()
+        calc_desc_container.setLayout(calc_desc_container_layout)
+        
+        #Description
+        calc_text = QLabel("Test")
 # Results area
         results_label = QLabel("Your unweighted GPA is...")
         h2_font = results_label.font()
@@ -106,6 +124,11 @@ class MainWindow(QMainWindow):
 # Calls the function
         self.main_layout.addWidget(class_1_container, 1, 0)
         self.main_layout.addWidget(class_2_container, 2, 0)
+        self.main_layout.addWidget(class_3_container, 3, 0)
+        self.main_layout.addWidget(calc_desc_container, 1, 1)
+        self.main_layout.addWidget(calc_text, 2, 1)
+
+
 
         # right_pane.addWidget(results_label)
         # left_pane.addWidget(class_label)
