@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
 
 
         self.grade_inputs = QWidget
-        # self.gr
+        
 
 # Area where user enters class grades
         class_label = QLabel("Enter your class grade here:")
@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
         calc_desc_container.setLayout(calc_desc_container_layout)
         
         #Description
-        calc_text = QLabel("Test")
+        #calc_text = QLabel("Test")
 # Results area
         results_label = QLabel("Your unweighted GPA is...")
         h2_font = results_label.font()
@@ -119,14 +119,22 @@ class MainWindow(QMainWindow):
         info_label.setAlignment(Qt.AlignmentFlag.AlignRight)
         info_label.setAlignment(Qt.AlignmentFlag.AlignTop)
 
-        push_button = QPushButton
+        self.push_button = QPushButton("Calcuate!")
+
+# Display the average
+        #def calculate_grade()
+            
+            
         
 # Calls the function
         self.main_layout.addWidget(class_1_container, 1, 0)
         self.main_layout.addWidget(class_2_container, 2, 0)
         self.main_layout.addWidget(class_3_container, 3, 0)
         self.main_layout.addWidget(calc_desc_container, 1, 1)
-        self.main_layout.addWidget(calc_text, 2, 1)
+        #self.main_layout.addWidget(calc_text, 2, 1)
+        self.main_layout.addWidget(self.push_button, 2, 1)
+        #self.main_layout.addWidget(self.push_button, 3, 2) make this the output
+        
 
 
 
