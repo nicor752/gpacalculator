@@ -42,6 +42,8 @@ class MainWindow(QMainWindow):
         self.title_label.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.main_layout.addWidget(self.title_label, 0, 0)
 
+ 
+
         # self.left_panel = QWidget()
         # self.left_panel_layout = QVBoxLayout()
         # self.left_panel.setLayout(self.left_panel_layout)
@@ -66,30 +68,36 @@ class MainWindow(QMainWindow):
         class_1_container_layout = QGridLayout()
         class_1_container.setLayout(class_1_container_layout)
         enter_class1_title = QLineEdit()
-        enter_grade_class_1 = QDoubleSpinBox()
+        self.enter_grade_class_1 = QDoubleSpinBox()
+        self.enter_grade_class_1.setMinimum(0)
+        self.enter_grade_class_1.setMaximum(4.0)
 
         class_1_container_layout.addWidget(enter_class1_title, 0, 0)
-        class_1_container_layout.addWidget(enter_grade_class_1, 0 , 1)
+        class_1_container_layout.addWidget(self.enter_grade_class_1, 0 , 1)
 
         #Period 2
         class_2_container = QGroupBox("Period 2 ")
         class_2_container_layout = QGridLayout()
         class_2_container.setLayout(class_2_container_layout)
         enter_class2_title = QLineEdit()
-        enter_grade_class_2 = QDoubleSpinBox()
+        self.enter_grade_class_2 = QDoubleSpinBox()
+        self.enter_grade_class_2.setMinimum(0)
+        self.enter_grade_class_2.setMaximum(4.0)
 
         class_2_container_layout.addWidget(enter_class2_title, 0, 0)
-        class_2_container_layout.addWidget(enter_grade_class_2, 0 , 1)
+        class_2_container_layout.addWidget(self.enter_grade_class_2, 0 , 1)
 
         #Period3
         class_3_container = QGroupBox("Period 3 ")
         class_3_container_layout = QGridLayout()
         class_3_container.setLayout(class_3_container_layout)
         enter_class3_title = QLineEdit()
-        enter_grade_class_3 = QDoubleSpinBox()
+        self.enter_grade_class_3 = QDoubleSpinBox()
+        self.enter_grade_class_3.setMinimum(0)
+        self.enter_grade_class_3.setMaximum(4.0)
 
         class_3_container_layout.addWidget(enter_class3_title, 0, 0)
-        class_3_container_layout.addWidget(enter_grade_class_3, 0 , 1)
+        class_3_container_layout.addWidget(self.enter_grade_class_3, 0 , 1)
 
         #Title
         calc_desc_container = QGroupBox("How does the GPA calculator work?")
@@ -103,6 +111,14 @@ class MainWindow(QMainWindow):
         h2_font = results_label.font()
         h2_font.setPointSize(25)
         results_label.setFont(h2_font)
+
+#def calculate_grade(self):
+        "Calculate GPA"
+# All class grades
+#def calculate_grade(self):
+       # gpa = enter_grade_class_3.value()
+       # print(gpa)
+        #self.results_window.Text("Your GPA is {gpa}.")
 
 # Button calculate
         calculate_label = QLabel("Calculate it!")
@@ -120,9 +136,12 @@ class MainWindow(QMainWindow):
         info_label.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         self.push_button = QPushButton("Calcuate!")
+        # add calculate function
+        self.push_button.clicked.connect(self.calculate_grade)
 
 # Display the average
-        #def calculate_grade()
+        self.results_window = QLabel("Average")
+
             
             
         
@@ -133,7 +152,7 @@ class MainWindow(QMainWindow):
         self.main_layout.addWidget(calc_desc_container, 1, 1)
         #self.main_layout.addWidget(calc_text, 2, 1)
         self.main_layout.addWidget(self.push_button, 2, 1)
-        #self.main_layout.addWidget(self.push_button, 3, 2) make this the output
+        self.main_layout.addWidget(self.results_window, 3, 1)
         
 
 
@@ -146,6 +165,11 @@ class MainWindow(QMainWindow):
         # self.main_layout.addLayout(left_pane, 1, 0)
         # self.main_layout.addLayout(right_pane, 1, 2)
 
+    def calculate_grade(self):
+        """Calculate gpa"""
+        gpa = self.enter_class_grade_1.value()
+        print(gpa)
+        self.results_window.setText("Your GPA is {gpa}.")
 
 
 
