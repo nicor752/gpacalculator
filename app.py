@@ -169,7 +169,7 @@ class MainWindow(QMainWindow):
         """Calculate gpa"""
         gpa = self.enter_class_grade_1.value()
         print(gpa)
-        self.results_window.setText("Your GPA is {gpa}.")
+        self.results_window.setText(f"Your GPA is {gpa}.")
 
 
 
