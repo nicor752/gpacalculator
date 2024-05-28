@@ -49,9 +49,6 @@ class MainWindow(QMainWindow):
         # self.left_panel.setLayout(self.left_panel_layout)
         # self.main_layout.addWidget(self.left_panel)
 
-        left_pane = QVBoxLayout()
-        
-        right_pane = QVBoxLayout()
 
 
         self.grade_inputs = QWidget
@@ -135,7 +132,7 @@ class MainWindow(QMainWindow):
         info_label.setAlignment(Qt.AlignmentFlag.AlignRight)
         info_label.setAlignment(Qt.AlignmentFlag.AlignTop)
 
-        self.push_button = QPushButton("Calcuate!")
+        self.push_button = QPushButton("Calculate!")
         # add calculate function
         self.push_button.clicked.connect(self.calculate_grade)
 
