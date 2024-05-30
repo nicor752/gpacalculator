@@ -96,6 +96,61 @@ class MainWindow(QMainWindow):
         class_3_container_layout.addWidget(enter_class3_title, 0, 0)
         class_3_container_layout.addWidget(self.enter_grade_class_3, 0 , 1)
 
+        #P4
+        class_4_container = QGroupBox("Period 4 ")
+        class_4_container_layout = QGridLayout()
+        class_4_container.setLayout(class_4_container_layout)
+        enter_class4_title = QLineEdit()
+        self.enter_grade_class_4 = QDoubleSpinBox()
+        self.enter_grade_class_4.setMinimum(0)
+        self.enter_grade_class_4.setMaximum(4.0)
+
+        class_4_container_layout.addWidget(enter_class4_title, 0, 0)
+        class_4_container_layout.addWidget(self.enter_grade_class_4, 0 , 1)
+        #P5
+        class_5_container = QGroupBox("Period 5 ")
+        class_5_container_layout = QGridLayout()
+        class_5_container.setLayout(class_5_container_layout)
+        enter_class5_title = QLineEdit()
+        self.enter_grade_class_5 = QDoubleSpinBox()
+        self.enter_grade_class_5.setMinimum(0)
+        self.enter_grade_class_5.setMaximum(4.0)
+
+        class_5_container_layout.addWidget(enter_class5_title, 0, 0)
+        class_5_container_layout.addWidget(self.enter_grade_class_5, 0 , 1)
+        #P6
+        class_6_container = QGroupBox("Period 6 ")
+        class_6_container_layout = QGridLayout()
+        class_6_container.setLayout(class_6_container_layout)
+        enter_class6_title = QLineEdit()
+        self.enter_grade_class_6 = QDoubleSpinBox()
+        self.enter_grade_class_6.setMinimum(0)
+        self.enter_grade_class_6.setMaximum(4.0)
+
+        class_6_container_layout.addWidget(enter_class6_title, 0, 0)
+        class_6_container_layout.addWidget(self.enter_grade_class_6, 0 , 1)
+        #P7
+        class_7_container = QGroupBox("Period 7 ")
+        class_7_container_layout = QGridLayout()
+        class_7_container.setLayout(class_7_container_layout)
+        enter_class7_title = QLineEdit()
+        self.enter_grade_class_7 = QDoubleSpinBox()
+        self.enter_grade_class_7.setMinimum(0)
+        self.enter_grade_class_7.setMaximum(4.0)
+
+        class_7_container_layout.addWidget(enter_class7_title, 0, 0)
+        class_7_container_layout.addWidget(self.enter_grade_class_7, 0 , 1)
+        #P8
+        class_8_container = QGroupBox("Period 8 ")
+        class_8_container_layout = QGridLayout()
+        class_8_container.setLayout(class_8_container_layout)
+        enter_class8_title = QLineEdit()
+        self.enter_grade_class_8 = QDoubleSpinBox()
+        self.enter_grade_class_8.setMinimum(0)
+        self.enter_grade_class_8.setMaximum(4.0)
+
+        class_8_container_layout.addWidget(enter_class8_title, 0, 0)
+        class_8_container_layout.addWidget(self.enter_grade_class_8, 0 , 1)
         #Title
         calc_desc_container = QGroupBox("How does the GPA calculator work?")
         calc_desc_container_layout = QGridLayout()
@@ -146,7 +201,13 @@ class MainWindow(QMainWindow):
         self.main_layout.addWidget(class_1_container, 1, 0)
         self.main_layout.addWidget(class_2_container, 2, 0)
         self.main_layout.addWidget(class_3_container, 3, 0)
+        self.main_layout.addWidget(class_4_container, 4, 0)
+        self.main_layout.addWidget(class_5_container, 5, 0)
+        self.main_layout.addWidget(class_6_container, 6, 0)
+        self.main_layout.addWidget(class_7_container, 7, 0)
+        self.main_layout.addWidget(class_8_container, 8, 0)
         self.main_layout.addWidget(calc_desc_container, 1, 1)
+        
         #self.main_layout.addWidget(calc_text, 2, 1)
         self.main_layout.addWidget(self.push_button, 2, 1)
         self.main_layout.addWidget(self.results_window, 3, 1)
