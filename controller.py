@@ -8,7 +8,7 @@ Some functions to control our GPA calculator app
 def get_gradegpa(grade1: int, grade2: int, grade3: int) -> float:
     """Takes averages"""
     class_amount = 3
-    gradegpa = ((grade1 + grade2 + grade3) // (class_amount))
+    gradegpa = round(((grade1 + grade2 + grade3) / (class_amount)),2)
     results = f"Your GPA is... {gradegpa}"
     return results
 # Global scope
