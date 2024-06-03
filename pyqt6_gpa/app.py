@@ -255,7 +255,7 @@ class MainWindow(QMainWindow):
         grade = self.enter_grade_class_8.value()
         if grade > 0:
                 grade_list.append(grade)
-       
+
         results = controller.get_gradegpa(grade_list)
         print(results)
         self.results_window.setText(results)

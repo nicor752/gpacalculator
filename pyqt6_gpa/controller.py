@@ -9,8 +9,9 @@ def get_gradegpa(grades: list) -> float:
     class_amount = len(grades)
    
     if not grades:
-        print("No grades available!")
-   
-    gpa = round((grade_points / class_amount),2)
-    display = f"Your GPA is... {gpa}"
-    return display
+        error = f"No grades available!"
+        return error
+    else:
+        gpa = round((grade_points / class_amount),2)
+        display = f"Your GPA is... {gpa}"
+        return display
