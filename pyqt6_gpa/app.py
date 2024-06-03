@@ -1,6 +1,4 @@
 import sys
-
-
 from PyQt6.QtCore import Qt
 import controller
 
@@ -29,29 +27,22 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
 
-
         self.setWindowTitle("GPA Calculator App")
         self.UIComponents()
-       
+
 # Setup for the title
     def UIComponents(self):
         self.container = QWidget()
         self.main_layout = QGridLayout()
-
-
         self.container.setLayout(self.main_layout)
         self.setCentralWidget(self.container)
         self.container.setStyleSheet("background-color: beige;")
-
-
         self.title_label = QLabel("GPA Calculator")
         h1_font = self.title_label.font()
         h1_font.setPointSize(30)
         self.title_label.setFont(h1_font)
         self.title_label.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.main_layout.addWidget(self.title_label, 0, 0)
-
-
         self.grade_inputs = QWidget
         self.grade_spinboxes = []
        
@@ -60,7 +51,6 @@ class MainWindow(QMainWindow):
         h2_font = class_label.font()
         h2_font.setPointSize(20)
         class_label.setFont(h2_font)
-
 
         #Period 1
         class_1_container = QGroupBox("Period 1 ")
@@ -75,7 +65,6 @@ class MainWindow(QMainWindow):
         class_1_container_layout.addWidget(enter_class1_title, 0, 0)
         class_1_container_layout.addWidget(self.enter_grade_class_1, 0 , 1)
        
-       
         #Period 2
         class_2_container = QGroupBox("Period 2 ")
         class_2_container_layout = QGridLayout()
@@ -89,8 +78,7 @@ class MainWindow(QMainWindow):
         class_2_container_layout.addWidget(enter_class2_title, 0, 0)
         class_2_container_layout.addWidget(self.enter_grade_class_2, 0 , 1)
        
-       
-        #Period3
+        #Period 3
         class_3_container = QGroupBox("Period 3 ")
         class_3_container_layout = QGridLayout()
         class_3_container.setLayout(class_3_container_layout)
@@ -103,8 +91,7 @@ class MainWindow(QMainWindow):
         class_3_container_layout.addWidget(enter_class3_title, 0, 0)
         class_3_container_layout.addWidget(self.enter_grade_class_3, 0 , 1)
        
-       
-        #P4
+        #Period 4
         class_4_container = QGroupBox("Period 4 ")
         class_4_container_layout = QGridLayout()
         class_4_container.setLayout(class_4_container_layout)
@@ -117,7 +104,7 @@ class MainWindow(QMainWindow):
         class_4_container_layout.addWidget(enter_class4_title, 0, 0)
         class_4_container_layout.addWidget(self.enter_grade_class_4, 0 , 1)
        
-        #P5
+        #Period 5
         class_5_container = QGroupBox("Period 5 ")
         class_5_container_layout = QGridLayout()
         class_5_container.setLayout(class_5_container_layout)
@@ -130,7 +117,7 @@ class MainWindow(QMainWindow):
         class_5_container_layout.addWidget(enter_class5_title, 0, 0)
         class_5_container_layout.addWidget(self.enter_grade_class_5, 0 , 1)
        
-        #P6
+        #Period 6
         class_6_container = QGroupBox("Period 6 ")
         class_6_container_layout = QGridLayout()
         class_6_container.setLayout(class_6_container_layout)
@@ -143,7 +130,7 @@ class MainWindow(QMainWindow):
         class_6_container_layout.addWidget(enter_class6_title, 0, 0)
         class_6_container_layout.addWidget(self.enter_grade_class_6, 0 , 1)
        
-        #P7
+        #Period 7
         class_7_container = QGroupBox("Period 7 ")
         class_7_container_layout = QGridLayout()
         class_7_container.setLayout(class_7_container_layout)
@@ -156,7 +143,7 @@ class MainWindow(QMainWindow):
         class_7_container_layout.addWidget(enter_class7_title, 0, 0)
         class_7_container_layout.addWidget(self.enter_grade_class_7, 0 , 1)
        
-        #P8
+        #Period 8
         class_8_container = QGroupBox("Period 8 ")
         class_8_container_layout = QGridLayout()
         class_8_container.setLayout(class_8_container_layout)
@@ -192,7 +179,6 @@ class MainWindow(QMainWindow):
         self.push_button.clicked.connect(self.get_gradegpa)
         self.push_button.setStyleSheet("background-color: lightgreen;")
 
-
 # Description of app
         info_label = QLabel("The GPA calculator app allows you to...")
         h2_font = info_label.font()
@@ -200,7 +186,6 @@ class MainWindow(QMainWindow):
         info_label.setFont(h2_font)
         info_label.setAlignment(Qt.AlignmentFlag.AlignRight)
         info_label.setAlignment(Qt.AlignmentFlag.AlignTop)
-
 
 # Display the average
         self.results_window = QLabel("Your GPA is....")
@@ -220,7 +205,6 @@ class MainWindow(QMainWindow):
         self.main_layout.addWidget(warning, 3, 1)
         self.main_layout.addWidget(self.push_button, 5, 1)
         self.main_layout.addWidget(self.results_window, 6, 1)
-
 
 # Controller Calculation to main
     def get_gradegpa(self):
@@ -275,10 +259,6 @@ class MainWindow(QMainWindow):
         results = controller.get_gradegpa(grade_list)
         print(results)
         self.results_window.setText(results)
-
-
-   
-
 
 app = QApplication(sys.argv)
 window = MainWindow()
